@@ -1,4 +1,7 @@
-// Function to parse punch card and convert it back to text
+/**
+ * Parses a punch card and converts it back to text
+ * This improved version handles incomplete data and padding to recover all characters
+ */
 function parsePunchCard(punchCardText) {
     // Split the input by lines
     const lines = punchCardText.trim().split('\n');
@@ -17,12 +20,22 @@ function parsePunchCard(punchCardText) {
         return line.substring(separatorIndex + 3); // +3 to skip " | "
     });
     
-    // Find the length of the shortest bit line to prevent out-of-bounds access
-    const minLineLength = Math.min(...visualBits.map(line => line.length));
+    // Find the length of the longest bit line
+    const maxLineLength = Math.max(...visualBits.map(line => line.length));
     
-    // Determine the number of characters in the original message
-    // Each char takes 2 spaces (● or space + space)
-    const charCount = Math.floor(minLineLength / 2); 
+    // Pad shorter lines to match the longest line
+    // This ensures we don't lose characters at the end
+    const paddedVisualBits = visualBits.map(line => {
+        if (line.length < maxLineLength) {
+            // Pad with spaces to match the longest line
+            return line.padEnd(maxLineLength, ' ');
+        }
+        return line;
+    });
+    
+    // Calculate the number of characters in the message
+    // Each character takes 2 positions (symbol + space)
+    const charCount = Math.floor(maxLineLength / 2);
     
     if (charCount === 0) {
         return { success: false, message: "No characters found in the punch card." };
@@ -32,8 +45,11 @@ function parsePunchCard(punchCardText) {
     const binaryChars = [];
     for (let charIndex = 0; charIndex < charCount; charIndex++) {
         let binaryChar = '';
+        const position = charIndex * 2; // Each character is at position 0, 2, 4, etc.
+        
         for (let bitIndex = 0; bitIndex < 8; bitIndex++) {
-            const visualChar = visualBits[bitIndex].charAt(charIndex * 2); // Get the visual character (● or space)
+            // Get the visual character (● or space)
+            const visualChar = paddedVisualBits[bitIndex][position];
             binaryChar += (visualChar === '●') ? '1' : '0';
         }
         binaryChars.push(binaryChar);
