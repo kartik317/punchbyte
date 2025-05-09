@@ -17,8 +17,12 @@ function parsePunchCard(punchCardText) {
         return line.substring(separatorIndex + 3); // +3 to skip " | "
     });
     
+    // Find the length of the shortest bit line to prevent out-of-bounds access
+    const minLineLength = Math.min(...visualBits.map(line => line.length));
+    
     // Determine the number of characters in the original message
-    const charCount = Math.floor(visualBits[0].length / 2); // Each char takes 2 spaces (● or space + space)
+    // Each char takes 2 spaces (● or space + space)
+    const charCount = Math.floor(minLineLength / 2); 
     
     if (charCount === 0) {
         return { success: false, message: "No characters found in the punch card." };
