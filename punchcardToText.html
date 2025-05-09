@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Punchcard To Text</title>
+  <link rel="stylesheet" href="punchcardStyle.css">
+</head>
+<body>
+  <div class="title-container">
+    <h1>Punchcard To Text</h1>
+  </div>
+  <div class="container">
+    <textarea id="punchcard-input" class="code-style-textarea " placeholder="Paste punch card here..." rows="10" required></textarea>
+  </div>
+  <div class="button-group">
+  <button class="convert-btn" width="50px">Convert</button>
+  <a href="index.html" class="navigation-btn"><button>Back</button></a>
+  <a href="textToPunchcard.html" class="navigation-btn"><button>Text To Punchcard</button></a>
+  </div>
+  <div class="output-wrapper">
+    <button class="copy-btn" onclick="copyToClipboard()">Copy</button>
+    <div class="output-container">
+      <pre id="output" class="output-content"></pre>
+    </div>
+  </div>
+  <script src="punchCardDeCoder.js"></script>
+</body>
+</html>

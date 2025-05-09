@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Text To Punchcard</title>
+  <link rel="stylesheet" href="punchcardStyle.css">
+</head>
+<body>
+  <div class="title-container">
+    <h1>Text To Punchcard</h1>
+  </div>
+  <div class="container">
+    <input type="text" class="text-input" placeholder="Enter text..." required>
+    <div class="button-group">
+  <button class="convert-btn">Convert</button>
+  <a href="index.html" class="navigation-btn"><button>Back</button></a>
+  <a href="punchcardToText.html" class="navigation-btn"><button>Punchcard To Text</button></a>
+</div>
+  </div>
+  <div class="code-wrapper">
+  <button class="copy-btn" onclick="copyToClipboard()">Copy</button>
+  <div class="code-container">
+    <pre id="code" class="code-content">
+
+    </pre>
+  </div>
+</div>
+<script src="punchCardCoder.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Punch card coder & decoder</title>
+  <link rel="icon" type="image/png" href="https://postimage.me/images/2025/05/09/logo.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#00ff00">
+</head>
+<body>
+  <div class="logo-main-container">
+    <div class="logo-container">
+      <img src="https://postimage.me/images/2025/05/09/logo.png" alt="logo" id="logo">
+    </div>
+  </div>
+  <div class="btn-container">
+  <a href="textToPunchcard.html" class="punchcard-btn">Text To Punchcard</a>
+  <a href="punchcardToText.html" class="punchcard-btn">Punchcard To Text</a>
+  </div>
+  <div class="code-wrapper">
+  <button class="copy-btn" onclick="copyToClipboard()">Copy</button>
+  <div class="code-container">
+    Example Punchcard
+    <pre id="code" class="code-content">
+Bit 7 |                                                                                                                             
+Bit 6 | ● ● ● ●   ● ●   ● ● ● ● ● ● ●   ● ● ● ●     ● ● ● ● ● ● ● ● ●   ● ● ● ● ● ● ●   ● ● ● ●   ● ● ● ●   ● ●   ● ● ● ● ● ● ● ● ● 
+Bit 5 |   ● ● ● ●   ● ●   ● ● ● ● ● ● ●   ● ● ● ● ●   ● ● ● ●   ● ● ● ●   ● ● ● ● ● ● ●   ● ● ● ●   ● ● ● ●   ● ●   ● ● ● ● ● ● ● ● 
+Bit 4 | ●     ●     ●     ●     ●       ●   ● ●     ● ●         ● ●           ●   ● ●   ●   ● ●   ●   ● ●   ●     ● ●           ●   
+Bit 3 |   ● ●     ●       ●   ●   ●         ●   ●       ●   ●   ●         ● ●           ● ●           ●       ●       ●   ●         
+Bit 2 | ●               ●     ●   ● ●   ● ●   ● ●     ● ●         ● ●     ● ● ● ●   ●     ● ●     ● ●   ●   ● ●     ● ●           ● 
+Bit 1 |       ●     ●                           ●       ● ●   ●         ● ● ● ●   ●       ●   ●               ●       ● ●   ●   ●   
+Bit 0 |     ● ●   ● ●   ●   ● ●     ●     ●           ●   ●     ●   ●   ● ●     ●       ● ● ●       ●         ●     ●   ●   ● ●     
+    </pre>
+  </div>
+<script src="script.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js')
+      .then(reg => console.log('Service Worker Registered'))
+      .catch(err => console.error('Service Worker Error:', err));
+  }
+</script>
+</body>
+</html>

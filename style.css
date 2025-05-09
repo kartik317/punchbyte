@@ -1,0 +1,118 @@
+body{
+background-image: url(https://postimage.me/images/2025/05/09/bg.jpg);
+background-repeat: no-repeat;
+background-position: center;
+background-attachment: fixed;
+background-size: cover;
+}
+
+.logo-main-container{
+  display: flex;
+  justify-content: center;
+  align-item: center;
+  margin: 20px;
+  padding: 10px;
+}
+
+#logo{
+  width: 200px;
+}
+
+.btn-container{
+  display: flex;
+  justify-content: center;
+  align-item: center;
+  gap: 5px;
+}
+
+.punchcard-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  font-family: 'Courier New', monospace;
+  font-size: 16px;
+  color: #00ff00;
+  background-color: transparent;
+  border: 2px solid #00ff00;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  box-shadow: 0 0 10px #00ff00;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.punchcard-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 255, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+.punchcard-btn:hover::before {
+  left: 0;
+}
+
+.punchcard-btn:hover {
+  color: black; /* stays visible on green */
+  background-color: #00ff00;
+  box-shadow: 0 0 20px #00ff00, 0 0 40px #00ff00;
+}
+
+.code-wrapper {
+      position: relative;
+      max-width: 100%;
+      margin-top: 20px;
+    }
+    
+    .code-container {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background: #1e1e1e;
+      color: #00ff00;
+      font-family: monospace;
+      max-width: 100%;
+      height: 240px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      white-space: pre;
+      padding-top: 40px; /* Make room for the button */
+    }
+
+    .copy-btn {
+      position: sticky;
+      left: calc(100% - 80px); /* Position from the right edge */
+      top: 10px;
+      float: right;
+      margin-bottom: -40px; /* Negative margin to overlap with padding */
+      background-color: #444;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      z-index: 10;
+      width: 70px;
+    }
+
+    .copy-btn:hover {
+      background: #555;
+    }
+
+    .code-content {
+      padding: 1em;
+    }
+    pre{
+      color: #00ff00;
+    }
+
+body, html {
+  overflow: hidden;
+  height: 100%;
+}
