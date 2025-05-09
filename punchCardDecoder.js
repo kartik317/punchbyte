@@ -69,7 +69,7 @@ function copyToClipboard() {
 // Set up event listeners when the DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     const punchcardInput = document.getElementById('punchcard-input');
-    const convertBtn = document.querySelector('.convert-btn');
+    const convertBtn = document.querySelector('.btn-group .convert-btn');
     const outputElement = document.getElementById('output');
     
     // Add event listener to the convert button
