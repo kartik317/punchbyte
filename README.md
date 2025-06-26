@@ -2,7 +2,7 @@
 
 **PunchByte** is a sleek, green-themed web application that lets you convert **text to punchcard** format and **punchcard to text**—inspired by the vintage punchcard systems with a modern hacker twist.
 
-![PunchByte Logo](https://postimage.me/images/2025/05/09/logo.png)
+![PunchByte Logo](https://i.ibb.co/Q3DTbbVN/20250626-092735-removebg-preview.png)
 
 ## Features
 
